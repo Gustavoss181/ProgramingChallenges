@@ -1,7 +1,11 @@
+#include "sorting.hpp"
+
 #include <iostream>
 
-using namespace std;
+namespace Teste{
 
-void teste(){
-    cout << "Hello World!!!" << endl;
+    void teste(){
+        std::cout << "Hello World!!!" << std::endl;
+    }
+
 }

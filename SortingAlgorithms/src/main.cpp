@@ -1,7 +1,7 @@
 #include "sorting.hpp"
 
-int main(int argc, char* argv[]){
-    teste();
+int main(){
+    Teste::teste();
 
     return 0;
 }

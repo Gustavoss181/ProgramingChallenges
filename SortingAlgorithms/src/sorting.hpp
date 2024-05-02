@@ -1,6 +1,5 @@
-#ifndef _H_TESTE
-#define _H_TESTE
+#pragma once
 
-void teste();
-
-#endif
+namespace Teste{
+    void teste();
+}
