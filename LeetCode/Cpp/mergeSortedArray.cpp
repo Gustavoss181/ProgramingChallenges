@@ -5,28 +5,28 @@ using namespace std;
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-        int size;
-        if(n > 0 or m > 0)
-            size = nums1[m-1] > nums2[n-1] ? nums1[m-1]+1 : nums2[n-1]+1;
-        else if(n == 0)
-            size = nums1[m-1]+1;
-        else
-            size = nums2[n-1]+1;
+        if(n == 0) return;
 
-        vector<int> count(size + 1, 0);
-        for(int i=0; i<m; i++){
-            count[nums1[i]]++;
+        int size = m+n;
+        vector<int> result(size);
+
+        int i=0,j=0,k=0;
+        while(i < m and j < n){
+            if(nums1[i] < nums2[j]){
+                result[k++] = nums1[i++];
+            }
+            else{
+                result[k++] = nums2[j++];
+            }
         }
-        for(int num : nums2){
-            count[num]++;
+        while(i < m){
+            result[k++] = nums1[i++];
         }
-        int it = 0;
-        for(int i=0; i<size; i++){
-            if(count[i] == 0) continue;
-            nums1[it] = i;
-            count[i]--;
-            it++;
-            i--;
+        while(j < n){
+            result[k++] = nums2[j++];
+        }
+        for(k=0; k<size; ++k){
+            nums1[k] = result[k];
         }
     }
 };
