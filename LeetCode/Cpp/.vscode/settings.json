@@ -2,5 +2,6 @@
     "files.associations": {
         "ostream": "cpp",
         "unordered_set": "cpp"
-    }
+    },
+    "C_Cpp.intelliSenseCacheSize": 512
 }
